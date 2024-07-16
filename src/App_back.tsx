@@ -42,6 +42,8 @@ const App: React.FC = () => {
         );
         const data = response.data["Time Series (Daily)"];
 
+        console.log(response.data);
+
         // 데이터를 변환하여 차트에 사용할 형식으로 만듭니다.
         const labels = Object.keys(data).slice(0, 180).reverse();
         const prices = labels.map((date) => parseFloat(data[date]["4. close"]));
